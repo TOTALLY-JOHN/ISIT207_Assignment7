@@ -1,0 +1,178 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterPage.master.cs" Inherits="Assignment7.masterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>INTI TABLE TENNIS CLUB</title>
+    <style>
+        #main {
+            width: auto;
+            height: auto;
+            background-color: white;
+            margin: 0px auto 0px auto;
+        }
+        header {
+            height: 400px;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        #headerPart {
+            height:80px;
+            background-color:white;
+        }
+        #menu {
+            padding-top:10px;
+            position:static;
+            margin-top:-400px;
+            margin-left:60%;
+            width:550px;
+            height:70px;
+            background-color:white;
+        }
+        section {
+            position: relative;
+            margin-top:300px;
+            margin-left:10%;
+        }
+        article {
+            position:relative;
+            width:auto;
+            height:400px;
+            margin-top:650px;
+            background-color:#dadada;
+        }
+        footer {
+            top:-20px;
+            position:relative;
+            width:auto;
+            height:70px;
+            background-color:#353333;
+        }
+        aside {
+            position: fixed;
+            right: 12px;
+            top: 132px;
+            z-index: 1;
+        }
+        a {
+            text-decoration: none;
+        }
+        .menuText {
+            font-size:22px;
+            font-family: Arial;
+        }
+        .menuText:link {
+            color: black;
+        }
+        /* Visited : Selects all visited links (Pseudo Selector 2) */
+        .menuText:visited {
+            color: black;
+        }
+        /* Selects links on mouse over (Pseudo Selector 3) */
+        .menuText:hover {
+            color: indianred;
+        }
+        /* Selects the active link (Pseudo Selector 4) */
+        .menuText:active {
+            color: azure;
+        }
+        /* Link : Selects all unvisited links */
+        .footerLink:link {
+            color: #eeeeee;
+        }
+        /* Visited : Selects all visited links */
+        .footerLink:visited {
+            color: #eeeeee;
+        }
+        /* Selects links on mouse over */
+        .footerLink:hover {
+            color: dimgrey;
+        }
+        /* Selects the active link */
+        .footerLink:active {
+            color: white;
+        }
+        /* pseudo selector 5*/
+        input:focus {
+            background-color:#ececec;
+        }
+        tr:nth-child(odd) {
+            background-color: #d2d2d2;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+        <div id="main">
+        <header>
+            <asp:LoginName ID="LoginName1" runat="server" FormatString="Logged in as {0}" />
+            <asp:LoginView ID="LoginView1" runat="server">
+                <LoggedInTemplate>
+                    (<asp:LoginStatus ID="LoginStatus1" runat="server" />)
+                </LoggedInTemplate>
+            </asp:LoginView>
+            <a href="https://newinti.edu.my/" target="_self">
+                <img src="https://studymasters.my/wp-content/uploads/2017/07/INTI-International-University-College.png" width="300" height="80" alt="intiLogo" />
+            </a>
+            <asp:ContentPlaceHolder ID="headImage" runat="server">
+            </asp:ContentPlaceHolder>
+        </header>
+        <nav>
+            <div id="menu">
+                <br />
+                <a class="menuText" href="default.aspx">Home</a> &nbsp; &nbsp; &nbsp; &nbsp;
+                <a class="menuText" href="login.aspx">Login</a> &nbsp; &nbsp; &nbsp; &nbsp;
+                <a class="menuText" href="apply.aspx">Sign Up</a> &nbsp; &nbsp; &nbsp; &nbsp;
+                <a class="menuText" href="event.aspx">Club Event</a> &nbsp; &nbsp; &nbsp; &nbsp;
+                <a class="menuText" href="racket.aspx">Racket</a>
+            </div>
+        </nav>
+        <section>
+            <br />
+            <asp:ContentPlaceHolder ID="sectionPart" runat="server">
+            </asp:ContentPlaceHolder>
+        </section>
+
+        <article>
+            <br /><br /><br />
+            <asp:ContentPlaceHolder ID="articleArea" runat="server">
+            </asp:ContentPlaceHolder>
+            
+        </article>
+        <aside>
+            <a href="https://www.instagram.com/inti_edu/?hl=en" target="_blank">
+                <img src="https://www.freepnglogos.com/uploads/instagram-logos-png-images-free-download-2.png" width="45" height="45" alt="instagram" /><br />
+            </a>
+            <a href="https://www.facebook.com/INTI.edu/" target="_blank">
+                <img src="http://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19757.png" width="45" height="45" alt="facebook" /><br />
+            </a>
+            <a href="http://international.newinti.edu.my/thank-you-for-contacting-us" target="_blank">
+                <img src="https://seeklogo.com/images/W/whatsapp-logo-33F6A82887-seeklogo.com.png" width="45" height="45" alt="whatsapp" /><br />
+            </a>
+            <a href="https://www.youtube.com/channel/UCvK0364R3x6ojR6_ozh5LkA" target="_blank">
+                <img src="https://i2.wp.com/www.vectorico.com/wp-content/uploads/2018/02/youtube-icon.png?fit=1000%2C1000" width="45" height="45" alt="youtube" />
+            </a>
+        </aside>
+        <footer>
+            <p style="text-align:center; position:relative; top:10px; color:white; font-size:20px;">
+                &copy; Copyright 2019 INTI international University &amp; Colleges<br />
+                <a class="footerLink" href="https://newinti.edu.my/legal/tnc/" target="_blank">
+                    Terms of Use
+                </a>
+                &nbsp; &nbsp;
+                <a class="footerLink" href="https://newinti.edu.my/legal/privacy/" target="_blank">
+                    Private Policy
+                </a> &nbsp;
+
+            </p>
+        </footer>
+        <!--The element of 'fixed' is positioned relative to the browser window.-->
+        <a href="#headerPart" style="position:fixed; right:12px; bottom:6px;">
+            <img src="https://www.zbrainsoft.com/images/up.png" width="60" height="60" alt="goToTitle" />
+        </a>
+    </div>
+    </form>
+</body>
+</html>
